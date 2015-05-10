@@ -28,4 +28,3 @@ I use Eclipse with ADT - just import the "Source Code" folder into Eclipse.
 # Screenshots
 ![screen1](https://cloud.githubusercontent.com/assets/6489464/7553980/5cafe612-f713-11e4-82d9-3da224bd1024.PNG)
 ![screen2](https://cloud.githubusercontent.com/assets/6489464/7553978/5c8a742c-f713-11e4-9d7b-896a7f9039a8.PNG)
-![screen3](https://cloud.githubusercontent.com/assets/6489464/7554008/513d0f70-f714-11e4-9473-ef3f9b9f9069.PNG)
