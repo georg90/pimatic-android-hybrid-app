@@ -7,6 +7,10 @@ Should work from 4.2+ up.
 
 Warning: This app ignores any SSL related errors!
 
+# APP
+If you have trouble with the version here on github try this: 
+[pimatic.apk](https://drive.google.com/open?id=0ByG528gEqchjS3h6QTBMY3J6MGc&authuser=0)
+
 # ToDo
 
 - Better way of navigating to config (not two title bars in one app) swiping?
