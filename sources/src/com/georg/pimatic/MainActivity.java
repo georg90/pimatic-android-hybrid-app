@@ -3,31 +3,40 @@ package com.georg.pimatic;
 import java.io.File;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
+import android.view.GestureDetector.SimpleOnGestureListener;
+import android.view.GestureDetector;
+
 
 
 
 @SuppressLint("SetJavaScriptEnabled") public class MainActivity extends Activity {
 
 	Intent intent;
+	ActionBar ab;
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ab = getActionBar();
+        ab.hide();
         refreshWebview();
-        
         
 	   
 	}
@@ -85,6 +94,29 @@ import android.webkit.WebViewClient;
         view.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         view.getSettings().setJavaScriptEnabled(true);
         view.loadUrl(url);
+        final GestureDetector gd = new GestureDetector(new MyGestureDetector());
+        View.OnTouchListener gl = new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                return gd.onTouchEvent(event);
+            }
+        };
+        view.setOnTouchListener(gl);
     }
     
+	class MyGestureDetector extends SimpleOnGestureListener {    
+	    @Override
+	    public boolean onDoubleTap(MotionEvent e) {
+	        Log.i("", "DoubleTapEvent");
+	        if (ab.isShowing()) {
+	        	ab.hide();
+	        	Log.i("", "DoubleTapEvent - hide");
+	        }
+	        else if (!ab.isShowing()) {
+	        	ab.show();
+	        	Log.i("", "DoubleTapEvent - show");
+	        }
+	        return true;
+	        }   
+
+	    }
 }
