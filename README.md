@@ -7,6 +7,12 @@ Should work from 4.2+ up.
 
 Warning: This app ignores any SSL related errors!
 
+# APP
+If you have trouble with the version here on github try this: 
+[pimatic.apk](https://drive.google.com/open?id=0ByG528gEqchjS3h6QTBMY3J6MGc&authuser=0)
+
+[pimatic.apk](https://www.dropbox.com/s/s6qk95526yd6lmu/pimatic.apk?dl=0)
+
 # ToDo
 
 - Better way of navigating to config (not two title bars in one app) swiping?
@@ -22,4 +28,4 @@ I use Eclipse with ADT - just import the "Source Code" folder into Eclipse.
 # Screenshots
 ![screen1](https://cloud.githubusercontent.com/assets/6489464/7553980/5cafe612-f713-11e4-82d9-3da224bd1024.PNG)
 ![screen2](https://cloud.githubusercontent.com/assets/6489464/7553978/5c8a742c-f713-11e4-9d7b-896a7f9039a8.PNG)
-![screen3](https://cloud.githubusercontent.com/assets/6489464/7554008/513d0f70-f714-11e4-9473-ef3f9b9f9069.PNG)
+![screen3](https://cloud.githubusercontent.com/assets/6489464/7559546/c9dc0a18-f7b8-11e4-8982-90de92601ffa.jpg)
