@@ -9,21 +9,21 @@ Warning: This app ignores any SSL related errors!
 
 # APP
 If you have trouble with the version here on github try this: 
-[pimatic.apk](https://drive.google.com/open?id=0ByG528gEqchjS3h6QTBMY3J6MGc&authuser=0)
 
-[pimatic.apk](https://www.dropbox.com/s/s6qk95526yd6lmu/pimatic.apk?dl=0)
+- [GDrive](https://drive.google.com/open?id=0ByG528gEqchjS3h6QTBMY3J6MGc&authuser=0)
+- [Dropbox](https://www.dropbox.com/s/s6qk95526yd6lmu/pimatic.apk?dl=0)
 
 # ToDo
 
-- Better way of navigating to config (not two title bars in one app) swiping?
-- Improve caching?
-- Improve Error Handling (SSL etc.)
-- Native app
+- [x] Better way of navigating to config (not two title bars in one app) swiping? Edit: Fixed by double tap
+- [ ] Improve caching?
+- [ ] Improve Error Handling (SSL etc.)
+- [ ] Native app
 
 # Source Code
 
-I'm not an Android developer you'll see when you take a look at the Source Code ;-) 
-I use Eclipse with ADT - just import the "Source Code" folder into Eclipse.
+I'm not an Android developer you'll see when you take a look at the source code ;-) 
+I use Eclipse with ADT - just import the "sources" folder into Eclipse.
 
 # Screenshots
 ![screen1](https://cloud.githubusercontent.com/assets/6489464/7553980/5cafe612-f713-11e4-82d9-3da224bd1024.PNG)
