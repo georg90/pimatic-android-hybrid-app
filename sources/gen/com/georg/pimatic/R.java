@@ -29,16 +29,17 @@ public final class R {
     }
     public static final class drawable {
         public static final int actionbar_icon_placeholder_compat=0x7f020000;
-        public static final int background=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
+        public static final int ic_launcher=0x7f020001;
+        public static final int vert_loading=0x7f020002;
     }
     public static final class id {
-        public static final int action_refresh=0x7f060005;
-        public static final int action_settings=0x7f060004;
+        public static final int action_refresh=0x7f060006;
+        public static final int action_settings=0x7f060005;
         public static final int hostname=0x7f060001;
-        public static final int savebutton=0x7f060002;
+        public static final int ignoreSSL=0x7f060002;
+        public static final int savebutton=0x7f060003;
         public static final int selected_view=0x7f060000;
-        public static final int webView=0x7f060003;
+        public static final int webView=0x7f060004;
     }
     public static final class layout {
         public static final int activity_config=0x7f030000;
@@ -56,30 +57,31 @@ public final class R {
         public static final int error_hostname_missing=0x7f070004;
         public static final int error_ok=0x7f070005;
         public static final int hostname=0x7f070001;
-        public static final int pref_default_display_name=0x7f07000f;
-        public static final int pref_description_social_recommendations=0x7f07000d;
+        public static final int ignoreSSL=0x7f07000a;
+        public static final int pref_default_display_name=0x7f070010;
+        public static final int pref_description_social_recommendations=0x7f07000e;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f070011;
+        public static final int pref_header_data_sync=0x7f070012;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f07000b;
+        public static final int pref_header_general=0x7f07000c;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f070014;
-        public static final int pref_ringtone_silent=0x7f070017;
-        public static final int pref_title_add_friends_to_messages=0x7f070010;
-        public static final int pref_title_display_name=0x7f07000e;
-        public static final int pref_title_new_message_notifications=0x7f070015;
-        public static final int pref_title_ringtone=0x7f070016;
-        public static final int pref_title_social_recommendations=0x7f07000c;
-        public static final int pref_title_sync_frequency=0x7f070012;
-        public static final int pref_title_system_sync_settings=0x7f070013;
-        public static final int pref_title_vibrate=0x7f070018;
+        public static final int pref_header_notifications=0x7f070015;
+        public static final int pref_ringtone_silent=0x7f070018;
+        public static final int pref_title_add_friends_to_messages=0x7f070011;
+        public static final int pref_title_display_name=0x7f07000f;
+        public static final int pref_title_new_message_notifications=0x7f070016;
+        public static final int pref_title_ringtone=0x7f070017;
+        public static final int pref_title_social_recommendations=0x7f07000d;
+        public static final int pref_title_sync_frequency=0x7f070013;
+        public static final int pref_title_system_sync_settings=0x7f070014;
+        public static final int pref_title_vibrate=0x7f070019;
         public static final int saveButton=0x7f070002;
         public static final int title_activity_config=0x7f070007;
-        public static final int title_activity_settings=0x7f07000a;
+        public static final int title_activity_settings=0x7f07000b;
     }
     public static final class style {
         /** 

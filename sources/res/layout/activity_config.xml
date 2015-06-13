@@ -17,6 +17,12 @@
         android:layout_height="wrap_content"
         android:ems="10" />
 
+    <CheckBox
+        android:id="@+id/ignoreSSL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ignoreSSL" />
+
     <Button
         android:id="@+id/savebutton"
         android:layout_width="105dp"
@@ -26,7 +32,7 @@
     
     <TextView
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/credit" />

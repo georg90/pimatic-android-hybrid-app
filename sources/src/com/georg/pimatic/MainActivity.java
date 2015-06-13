@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,9 +32,9 @@ import android.view.GestureDetector;
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         ab = getActionBar();
         ab.hide();
+        setContentView(R.layout.activity_main);
         refreshWebview();
         
 	   
@@ -73,14 +72,21 @@ import android.view.GestureDetector;
 	public void refreshWebview() 
     {
 		String url = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("host_value", "http://www.google.com"); 
+		final boolean ignoreSSL = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("checkbox_value", false); 
         WebView view = (WebView) this.findViewById(R.id.webView);
         view.setWebViewClient(new WebViewClient() {
         	
-    	
-            @Override
-            public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) {
-                handler.proceed();
-            }
+	            @Override
+	            public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) {
+	            	if (ignoreSSL) {
+	            		handler.proceed();
+	            	}
+	            	else {
+	            		handler.cancel();
+	            		String msg = error.toString();
+	            		Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
+	            	}
+	            };
         });
         view.getSettings().setDomStorageEnabled(true);
 	    File dir = getCacheDir();
@@ -94,7 +100,8 @@ import android.view.GestureDetector;
         view.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         view.getSettings().setJavaScriptEnabled(true);
         view.loadUrl(url);
-        final GestureDetector gd = new GestureDetector(new MyGestureDetector());
+        @SuppressWarnings("deprecation")
+		final GestureDetector gd = new GestureDetector(new MyGestureDetector());
         View.OnTouchListener gl = new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
                 return gd.onTouchEvent(event);
@@ -106,14 +113,11 @@ import android.view.GestureDetector;
 	class MyGestureDetector extends SimpleOnGestureListener {    
 	    @Override
 	    public boolean onDoubleTap(MotionEvent e) {
-	        Log.i("", "DoubleTapEvent");
 	        if (ab.isShowing()) {
 	        	ab.hide();
-	        	Log.i("", "DoubleTapEvent - hide");
 	        }
 	        else if (!ab.isShowing()) {
 	        	ab.show();
-	        	Log.i("", "DoubleTapEvent - show");
 	        }
 	        return true;
 	        }   
