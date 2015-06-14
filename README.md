@@ -15,6 +15,8 @@ If you have trouble with the version here on github try this:
 
 - [x] Better way of navigating to config (not two title bars in one app) swiping? Edit: Fixed by double tap
 - [x] Improve Error Handling (SSL etc.) Edit: Added toggling option to config // show ssl error if occurs
+- [ ] add option to toggle fullscreen
+- [ ] Option to change resolution
 - [ ] Improve caching?
 - [ ] Native app
 
