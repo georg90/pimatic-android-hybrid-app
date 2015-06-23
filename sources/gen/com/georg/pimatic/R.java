@@ -9,10 +9,11 @@ package com.georg.pimatic;
 
 public final class R {
     public static final class array {
-        public static final int pref_example_list_titles=0x7f080000;
-        public static final int pref_example_list_values=0x7f080001;
-        public static final int pref_sync_frequency_titles=0x7f080002;
-        public static final int pref_sync_frequency_values=0x7f080003;
+        public static final int pref_example_list_titles=0x7f080001;
+        public static final int pref_example_list_values=0x7f080002;
+        public static final int pref_sync_frequency_titles=0x7f080003;
+        public static final int pref_sync_frequency_values=0x7f080004;
+        public static final int zoom_array=0x7f080000;
     }
     public static final class attr {
     }
@@ -33,13 +34,15 @@ public final class R {
         public static final int vert_loading=0x7f020002;
     }
     public static final class id {
-        public static final int action_refresh=0x7f060006;
-        public static final int action_settings=0x7f060005;
+        public static final int action_refresh=0x7f060008;
+        public static final int action_settings=0x7f060007;
+        public static final int fullscreen=0x7f060003;
         public static final int hostname=0x7f060001;
         public static final int ignoreSSL=0x7f060002;
-        public static final int savebutton=0x7f060003;
+        public static final int savebutton=0x7f060005;
         public static final int selected_view=0x7f060000;
-        public static final int webView=0x7f060004;
+        public static final int webView=0x7f060006;
+        public static final int zoom=0x7f060004;
     }
     public static final class layout {
         public static final int activity_config=0x7f030000;
@@ -49,39 +52,43 @@ public final class R {
         public static final int main_activity_actions=0x7f0a0000;
     }
     public static final class string {
-        public static final int action_refresh=0x7f070009;
-        public static final int action_settings=0x7f070008;
+        public static final int action_refresh=0x7f07000a;
+        public static final int action_settings=0x7f070009;
         public static final int app_name=0x7f070000;
-        public static final int config_save=0x7f070006;
+        public static final int config_save=0x7f070007;
         public static final int credit=0x7f070003;
         public static final int error_hostname_missing=0x7f070004;
-        public static final int error_ok=0x7f070005;
+        public static final int error_ok=0x7f070006;
+        public static final int error_zoom=0x7f070005;
+        public static final int fullscreen=0x7f07000c;
         public static final int hostname=0x7f070001;
-        public static final int ignoreSSL=0x7f07000a;
-        public static final int pref_default_display_name=0x7f070010;
-        public static final int pref_description_social_recommendations=0x7f07000e;
+        public static final int ignoreSSL=0x7f07000b;
+        public static final int pref_default_display_name=0x7f070014;
+        public static final int pref_description_social_recommendations=0x7f070012;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f070012;
+        public static final int pref_header_data_sync=0x7f070016;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f07000c;
+        public static final int pref_header_general=0x7f070010;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f070015;
-        public static final int pref_ringtone_silent=0x7f070018;
-        public static final int pref_title_add_friends_to_messages=0x7f070011;
-        public static final int pref_title_display_name=0x7f07000f;
-        public static final int pref_title_new_message_notifications=0x7f070016;
-        public static final int pref_title_ringtone=0x7f070017;
-        public static final int pref_title_social_recommendations=0x7f07000d;
-        public static final int pref_title_sync_frequency=0x7f070013;
-        public static final int pref_title_system_sync_settings=0x7f070014;
-        public static final int pref_title_vibrate=0x7f070019;
+        public static final int pref_header_notifications=0x7f070019;
+        public static final int pref_ringtone_silent=0x7f07001c;
+        public static final int pref_title_add_friends_to_messages=0x7f070015;
+        public static final int pref_title_display_name=0x7f070013;
+        public static final int pref_title_new_message_notifications=0x7f07001a;
+        public static final int pref_title_ringtone=0x7f07001b;
+        public static final int pref_title_social_recommendations=0x7f070011;
+        public static final int pref_title_sync_frequency=0x7f070017;
+        public static final int pref_title_system_sync_settings=0x7f070018;
+        public static final int pref_title_vibrate=0x7f07001d;
         public static final int saveButton=0x7f070002;
-        public static final int title_activity_config=0x7f070007;
-        public static final int title_activity_settings=0x7f07000b;
+        public static final int title_activity_config=0x7f070008;
+        public static final int title_activity_settings=0x7f07000f;
+        public static final int zoom=0x7f07000d;
+        public static final int zoom_prompt=0x7f07000e;
     }
     public static final class style {
         /** 

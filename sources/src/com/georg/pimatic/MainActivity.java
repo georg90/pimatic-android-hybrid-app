@@ -29,13 +29,55 @@ import android.view.GestureDetector;
 
 	Intent intent;
 	ActionBar ab;
+	WebView view;
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ab = getActionBar();
         ab.hide();
+        final boolean isFullscreen = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("fullscreen_value", false);
+        toggleFullscreenMode(isFullscreen);
         setContentView(R.layout.activity_main);
-        refreshWebview();
+        String url = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("host_value", "http://www.google.com"); 
+		int zoom =  PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getInt("zoom_value", 0);
+		final boolean ignoreSSL = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("checkbox_value", false); 
+        view = (WebView) this.findViewById(R.id.webView);
+        view.setWebViewClient(new WebViewClient() {
+        	
+	            @Override
+	            public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) {
+	            	if (ignoreSSL) {
+	            		handler.proceed();
+	            	}
+	            	else {
+	            		handler.cancel();
+	            		String msg = error.toString();
+	            		Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
+	            	}
+	            };
+        });
+        view.getSettings().setDomStorageEnabled(true);
+	    File dir = getCacheDir();
+
+	    if (!dir.exists()) {
+	      dir.mkdirs();
+	    }
+	    view.setInitialScale(zoom);
+	    view.getSettings().setAppCachePath(dir.getPath());
+	    view.getSettings().setAllowFileAccess(true);
+	    view.getSettings().setAppCacheEnabled(true);
+        view.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+        view.getSettings().setJavaScriptEnabled(true);
+        view.loadUrl(url);
+        @SuppressWarnings("deprecation")
+		final GestureDetector gd = new GestureDetector(new MyGestureDetector());
+        View.OnTouchListener gl = new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                return gd.onTouchEvent(event);
+            }
+        };
+        view.setOnTouchListener(gl);
+        
         
 	   
 	}
@@ -69,45 +111,23 @@ import android.view.GestureDetector;
         startActivity(intent);
     }
 	
+	
+	public void toggleFullscreenMode( boolean isFullscreen )
+	{
+	     // Build.VERSION.SDK_INT >= 16
+	     View decorView = getWindow().getDecorView();
+	    if (isFullscreen) {
+	        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+	        decorView.setSystemUiVisibility(uiOptions);
+	    } else {
+	        int uiOptions = View.SYSTEM_UI_FLAG_VISIBLE;
+	        decorView.setSystemUiVisibility(uiOptions);
+	    }
+	}
+	
 	public void refreshWebview() 
     {
-		String url = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("host_value", "http://www.google.com"); 
-		final boolean ignoreSSL = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("checkbox_value", false); 
-        WebView view = (WebView) this.findViewById(R.id.webView);
-        view.setWebViewClient(new WebViewClient() {
-        	
-	            @Override
-	            public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) {
-	            	if (ignoreSSL) {
-	            		handler.proceed();
-	            	}
-	            	else {
-	            		handler.cancel();
-	            		String msg = error.toString();
-	            		Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
-	            	}
-	            };
-        });
-        view.getSettings().setDomStorageEnabled(true);
-	    File dir = getCacheDir();
-
-	    if (!dir.exists()) {
-	      dir.mkdirs();
-	    }
-	    view.getSettings().setAppCachePath(dir.getPath());
-	    view.getSettings().setAllowFileAccess(true);
-	    view.getSettings().setAppCacheEnabled(true);
-        view.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-        view.getSettings().setJavaScriptEnabled(true);
-        view.loadUrl(url);
-        @SuppressWarnings("deprecation")
-		final GestureDetector gd = new GestureDetector(new MyGestureDetector());
-        View.OnTouchListener gl = new View.OnTouchListener() {
-            public boolean onTouch(View v, MotionEvent event) {
-                return gd.onTouchEvent(event);
-            }
-        };
-        view.setOnTouchListener(gl);
+		view.reload();
     }
     
 	class MyGestureDetector extends SimpleOnGestureListener {    

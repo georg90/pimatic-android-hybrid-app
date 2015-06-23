@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="30dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,6 +14,8 @@
 
     <EditText
         android:id="@+id/hostname"
+        android:labelFor="@+id/hostname" 
+        android:inputType="textUri"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" />
@@ -22,6 +25,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ignoreSSL" />
+    <CheckBox
+        android:id="@+id/fullscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fullscreen" />
+	<TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/zoom" />
+
+	<EditText
+	    android:id="@+id/zoom"
+	    android:labelFor="@+id/zoom"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:ems="10"
+	    android:inputType="number" >
+
+	    <requestFocus />
+	</EditText>
 
     <Button
         android:id="@+id/savebutton"
@@ -36,5 +60,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/credit" />
+    
 
 </LinearLayout>

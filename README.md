@@ -8,15 +8,14 @@ Should work from 4.2+ up.
 # APP
 If you have trouble with the version here on github try this: 
 
-- [GDrive](https://drive.google.com/file/d/0ByG528gEqchjZGpmeUpDNzBiNkk/view?usp=sharing)
 - [Dropbox](https://www.dropbox.com/s/s6qk95526yd6lmu/pimatic.apk?dl=0)
 
 # ToDo
 
 - [x] Better way of navigating to config (not two title bars in one app) swiping? Edit: Fixed by double tap
 - [x] Improve Error Handling (SSL etc.) Edit: Added toggling option to config // show ssl error if occurs
-- [ ] add option to toggle fullscreen
-- [ ] Option to change resolution
+- [x] add option to toggle fullscreen (https://github.com/georg90/pimatic-android-hybrid-app/issues/2) Edit: Added toggle to config
+- [x] Option to change resolution (https://github.com/georg90/pimatic-android-hybrid-app/issues/1) Edit: Value between 0 (default) and 800%
 - [ ] Improve caching?
 - [ ] Native app
 
