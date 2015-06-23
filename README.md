@@ -14,8 +14,8 @@ If you have trouble with the version here on github try this:
 
 - [x] Better way of navigating to config (not two title bars in one app) swiping? Edit: Fixed by double tap
 - [x] Improve Error Handling (SSL etc.) Edit: Added toggling option to config // show ssl error if occurs
-- [x] add option to toggle fullscreen (https://github.com/georg90/pimatic-android-hybrid-app/issues/2) Edit: Added toggle to config
-- [x] Option to change resolution (https://github.com/georg90/pimatic-android-hybrid-app/issues/1) Edit: Value between 0 (default) and 800%
+- [x] add option to toggle fullscreen ([#2](https://github.com/georg90/pimatic-android-hybrid-app/issues/2)) Edit: Added toggle to config
+- [x] Option to change resolution ([#1](https://github.com/georg90/pimatic-android-hybrid-app/issues/1)) Edit: Value between 0 (default) and 800%
 - [ ] Improve caching?
 - [ ] Native app
 
